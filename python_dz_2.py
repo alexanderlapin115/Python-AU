@@ -26,4 +26,4 @@ vs = np.vectorize(my_cosh)
 angles = np.r_[-5:5:0.01]
 plt.plot(angles, vs(angles), linewidth=5, color = 'blue', alpha=0.25)
 plt.plot(angles, np.cosh(angles), color='black', linewidth=1.5, linestyle='dashed')
-plt.show(
+plt.show()
