@@ -5,6 +5,7 @@ def repeat(n):
                 result = x
             else:
                 for i in range (0, n):
+                    i += 1
                     result = genuine_function(x)
                     x = result
                 return x
