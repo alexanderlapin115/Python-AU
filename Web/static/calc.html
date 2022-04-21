@@ -1,0 +1,74 @@
+<div id="operator_btns">
+    <button id="gcd" class="operator" onclick="op='НОД'"> НОД </button>
+</div>
+
+<input id="a" type="number"/>
+
+<div id="operator_btns">
+  <button id="sum" class="operator" onclick="op='+'"> + </button>
+  <button id="subtraction" class="operator" onclick="op='-'"> - </button>
+  <button id="multiplication" class="operator" onclick="op='*'"> x </button>
+  <button id="division" class="operator" onclick="op='/'"> / </button>
+  <button id="exponentiation" class="operator" onclick="op='^'"> ^ </button>
+</div>
+
+<input id="b" type="number"/>
+
+<button onclick="func()"> = </button>
+
+<p id="result"></p>
+
+
+<script>
+  var op;
+  function func() {
+    var result;
+    var a = Number(document.getElementById("a").value);
+    var b = Number(document.getElementById("b").value);
+    switch (op) {
+      case 'НОД':
+        if (a != 0 & b != 0)
+        {
+          while (a != b)
+          {
+            if (a > b)
+            { a -= b; }
+            else
+            { b -= a; }
+        result = a;
+          }
+        }
+        if (a == 0)
+        { result = b; }
+        if (b == 0)
+        { result = a; }
+        break;
+      case '^':
+        result = a ** b;
+        break;
+      case '+':
+        result = a + b;
+        break;
+      case '-':
+        result = a - b;
+        break;
+      case '*':
+        result = a * b;
+        break;
+      case '/':
+        if (b != 0) 
+        {
+          result = a / b;
+        } 
+        else 
+        {
+          result = "Ошибка, нельзя делить на ноль";
+        }
+        break;
+      default:
+        result = "Выберите операцию";
+    }
+
+    document.getElementById("result").innerHTML = result;
+  }
+</script>
