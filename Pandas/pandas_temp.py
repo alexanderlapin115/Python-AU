@@ -7,9 +7,7 @@ df = pandas.read_csv("temperature.csv")
 df.plot(kind='bar')
 df.plot.kde()
 
-print(stats.kstest('norm', 'norm', N=3))
-print(stats.kstest('norm', 'norm', N=500))
-print()
+vals = df['temperature']
 
-print(stats.kstest(df, 'norm', (df.mean(), df.std()), N=len(df)))
+print(stats.kstest(vals, 'norm', (vals.mean(), vals.std()), N=len(df)))
 plt.show()
